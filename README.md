@@ -1,10 +1,10 @@
 # Genre Fusion Creator 🎮
 
-**类型融合创新器** - 用 LLM 生成游戏类型融合创意的设计工具
+**LLM-powered Game Genre Fusion Design Tool**
 
-一个帮你把 2-3 个游戏类型深度融合，产出可执行设计方案的开源工具。
+[English](README.md) | [中文](README_zh.md)
 
-> 🚧 **当前状态**: v0.1.0-alpha 测试版。核心功能可用，提示词工程和输出质量还在持续优化中。欢迎反馈和建议！
+> 🚧 **Status**: v0.1.0-alpha. Core features working, prompt engineering and output quality under continuous optimization. Feedback welcome!
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
@@ -12,140 +12,168 @@
 
 ---
 
-## ✨ 特性
+## ✨ Features
 
-- 🎯 **深度分析** - 不只是简单叠加，而是机制融合
-- 📋 **结构化输出** - 核心循环、机制融合表、创新点、风险评估
-- 🌐 **双模式** - CLI + Web 界面，满足不同需求
-- 🎨 **多方案生成** - 保守/平衡/激进三个方向可选
-- 📚 **内置示例** - 4 个完整示例供参考
+- 🎯 **Deep Analysis** - Not just stacking genres, but mechanism fusion
+- 📋 **Structured Output** - Core loop, mechanism fusion table, innovations, risk assessment
+- 🌐 **Dual Mode** - CLI + Web UI for different needs
+- 🎨 **Multi-scheme Generation** - Conservative/Balanced/Radical options
+- 📚 **Built-in Examples** - 5 complete example fusion schemes
 
 ---
 
-## 🚀 快速开始
+## 🚀 Quick Start
 
-### 1. 安装
+### 1. Install
 
 ```bash
-git clone https://github.com/yourusername/genre-fusion-creator.git
+git clone https://github.com/Oloiny/genre-fusion-creator.git
 cd genre-fusion-creator
 pip install -r requirements.txt
 ```
 
-### 2. 配置 API Key
+### 2. Configure API Key
 
 ```bash
-# 复制示例文件
+# Copy example file
 cp .env.example .env
 
-# 编辑 .env，填入你的 DashScope API Key
-# 获取：https://dashscope.console.aliyun.com/apiKey
+# Edit .env and fill in your DashScope API Key
+# Get it from: https://dashscope.console.aliyun.com/apiKey
 ```
 
-### 3. 运行
+### 3. Run
 
-**CLI 模式**：
+**CLI Mode**:
 ```bash
-python src/fusion_engine.py "Roguelike" "模拟经营" "社交模拟"
+python src/fusion_engine.py "Roguelike" "Simulation" "Social"
 ```
 
-**Web 界面**：
+**Web UI**:
 ```bash
 python src/web_ui.py
-# 访问 http://localhost:7860
+# Visit http://localhost:7860
 ```
 
 ---
 
-## 📋 输出示例
+## 📋 Output Example
 
 ```markdown
-## 融合方案：Roguelike × 模拟经营 × 社交模拟
+## Fusion Scheme: Roguelike × Simulation × Social
 
-### 🎯 核心概念
-在随机生成的末日世界中经营避难所，每次失败后新一代幸存者会继承部分记忆...
+### 🎯 Core Concept
+Manage a shelter in a randomly generated post-apocalyptic world. After each failure, 
+a new generation inherits partial memories and resources, but relationship networks reset.
 
-### 🔄 核心循环
-- 短期：探索 - 收集 - 建设循环
-- 中期：幸存者关系网演化
-- 长期：多代传承的文明重建
+### 🔄 Core Loop
 
-### 🔗 关键机制融合
-| Roguelike 元素 | 模拟经营元素 | 融合方式 |
-|---------------|-------------|---------|
-| 永久死亡 | 基地建设 | 代际传承机制 |
-...
+**Short-term** (per minute):
+- Assign survivors to explore, build, research
+- Handle emergencies (resource shortage, conflicts, diseases)
+
+**Mid-term** (per session):
+- Explore new areas, unlock resources and technologies
+- Expand shelter, accept new survivors
+
+**Long-term** (Meta progression):
+- Generational inheritance: next generation inherits tech and resources
+- Memory fragments: unlock special storylines
+- Civilization rebuilding progress
+
+### 🔗 Key Mechanism Fusion
+
+| Roguelike Element | Simulation Element | Fusion Approach |
+|------------------|-------------------|-----------------|
+| Permadeath | Base Building | Generational inheritance |
+| Random Generation | Resource Management | Survivors with random traits |
+| Meta Progression | Tech Tree | Memory fragments unlock cross-gen tech |
+
+### ✨ Innovations
+
+1. **Dynamic Family History**: Auto-generated "family legends" narrative
+2. **Memory Inheritance System**: Past experiences affect descendant abilities
+3. **Cultural Tradition Evolution**: Rituals become traditions across generations
+
+### ⚠️ Potential Risks
+
+- **Mechanism Conflict**: Fast-paced failure vs slow-paced building
+- **Cognitive Load**: Managing resources, relationships, tech tree simultaneously
+- **Development Complexity**: Generational system requires extensive content
 ```
 
-完整示例见 [`examples/`](examples/) 目录。
+Full examples in [`examples/`](examples/) directory.
 
 ---
 
-## 📖 文档
+## 📖 Documentation
 
-- [**使用指南**](docs/USAGE.md) - 详细使用说明
-- [**设计原则**](docs/design_principles.md) - 融合设计理念
-- [**示例方案**](examples/) - 完整输出示例
+- [**Usage Guide**](docs/USAGE.md) - Detailed usage instructions
+- [**Design Principles**](docs/design_principles.md) - Fusion design philosophy
+- [**Example Schemes**](examples/) - Complete output examples
+- [**中文文档**](README_zh.md) - Chinese version
 
 ---
 
-## 🛠️ 技术架构
+## 🛠️ Technical Architecture
 
 ```
 genre-fusion-creator/
 ├── src/
-│   ├── fusion_engine.py    # 核心引擎（CLI）
-│   ├── web_ui.py           # Web 界面（Gradio）
-│   └── prompts.py          # LLM 提示词模板
-├── examples/               # 示例输出
-├── tests/                  # 测试套件
-├── docs/                   # 文档
-└── requirements.txt        # 依赖
+│   ├── fusion_engine.py    # Core engine (CLI)
+│   ├── web_ui.py           # Web UI (Gradio)
+│   ├── prompts.py          # LLM prompt templates
+│   ├── config.py           # Configuration management
+│   └── __version__.py      # Version info
+├── examples/               # Example outputs
+├── tests/                  # Test suite
+├── docs/                   # Documentation
+└── requirements.txt        # Dependencies
 ```
 
 ---
 
-## 🎮 使用场景
+## 🎮 Use Cases
 
-| 用户 | 用途 | 示例命令 |
-|------|------|---------|
-| **游戏设计师** | 快速生成创意原型 | `python src/fusion_engine.py "RPG" "模拟经营"` |
-| **Game Jam 参赛者** | 寻找独特的融合主题 | `python src/fusion_engine.py "2D" "卡牌" --multi` |
-| **独立开发者** | 探索蓝海市场 | `python src/fusion_engine.py "解谜" "恐怖" -c "scope:独立小品"` |
-| **学生/研究者** | 研究游戏类型演化 | 批量生成 + 分析 |
+| User | Purpose | Example Command |
+|------|---------|-----------------|
+| **Game Designers** | Rapid prototype generation | `python src/fusion_engine.py "RPG" "Simulation"` |
+| **Game Jam Participants** | Find unique fusion themes | `python src/fusion_engine.py "2D" "Card" --multi` |
+| **Indie Developers** | Explore blue ocean markets | `python src/fusion_engine.py "Puzzle" "Horror" -c "scope:indie"` |
+| **Researchers** | Study game genre evolution | Batch generation + analysis |
 
 ---
 
-## 🤝 贡献
+## 🤝 Contributing
 
-欢迎贡献！可以：
+Contributions welcome! You can:
 
-- 提交新的融合示例
-- 改进提示词模板
-- 添加新功能（如评分系统、可视化）
-- 报告 Bug 或提出建议
+- Submit new fusion examples
+- Improve prompt templates
+- Add new features (scoring system, visualization)
+- Report bugs or suggest improvements
 
 ---
 
 ## 📄 License
 
-MIT License - 详见 [LICENSE](LICENSE) 文件
+MIT License - See [LICENSE](LICENSE) file
 
 ---
 
-## 🙏 致谢
+## 🙏 Acknowledgments
 
-灵感来源于对游戏类型演化的研究，以及无数成功融合类型的杰作：
+Inspired by game genre evolution research and successful fusion games:
 
-| 游戏 | 融合类型 |
-|------|---------|
-| 《暗黑地牢》 | Roguelike + 策略管理 |
-| 《环世界》 | 模拟经营 + 叙事生成 |
-| 《哈迪斯》 | Roguelike + 叙事驱动 |
-| 《极乐迪斯科》 | RPG + 侦探模拟 |
-| 《十字军之王》 | 策略 + 恋爱模拟 |
-| 《Frostpunk》 | 生存 + 城市建设 |
+| Game | Fusion Genres |
+|------|--------------|
+| Darkest Dungeon | Roguelike + Strategy Management |
+| RimWorld | Simulation + Narrative Generation |
+| Hades | Roguelike + Narrative-driven |
+| Disco Elysium | RPG + Detective Simulation |
+| Crusader Kings | Strategy + Dating Sim |
+| Frostpunk | Survival + City Building |
 
 ---
 
-**Made with ❤️ by OpenClaw** | [GitHub](https://github.com/yourusername/genre-fusion-creator)
+**Made with ❤️ by OpenClaw** | [GitHub](https://github.com/Oloiny/genre-fusion-creator)

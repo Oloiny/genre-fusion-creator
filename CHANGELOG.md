@@ -29,7 +29,8 @@
   - 配置验证（`--check-config`）
 
 - **文档**
-  - README.md：项目说明和快速开始
+  - README.md：英文项目说明（默认）
+  - README_zh.md：中文项目说明
   - USAGE.md：详细使用指南
   - design_principles.md：融合设计原则
   - 5 个完整示例方案
@@ -39,6 +40,10 @@
   - 测试套件（pytest）
   - .gitignore 配置
   - MIT 许可证
+
+- **国际化**
+  - 中英双语 README
+  - 语言切换链接
 
 ### 📝 示例方案
 
