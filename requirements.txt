@@ -1,0 +1,19 @@
+# Genre Fusion Creator Dependencies
+
+# Core (必需)
+requests>=2.28.0
+python-dotenv>=1.0.0
+
+# LLM API (必需)
+dashscope>=1.14.0
+
+# Optional: For interactive UI (可选)
+# gradio>=3.50.0
+# 安装：pip install gradio
+
+# Optional: For visualization (可选)
+# graphviz>=0.20.0
+# matplotlib>=3.7.0
+
+# Development (可选)
+# pytest>=7.0.0
