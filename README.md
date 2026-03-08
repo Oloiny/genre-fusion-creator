@@ -4,11 +4,11 @@
 
 [English](README.md) | [中文](README_zh.md)
 
-> 🚧 **Status**: v0.1.0-alpha. Core features working, prompt engineering and output quality under continuous optimization. Feedback welcome!
+> 🚧 **Status**: v0.2.0-alpha. New: Creative Evaluation + 20+ Case Library. Feedback welcome!
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Version: 0.1.0-alpha](https://img.shields.io/badge/version-0.1.0--alpha-orange.svg)](CHANGELOG.md)
+[![Version: 0.2.0-alpha](https://img.shields.io/badge/version-0.2.0--alpha-orange.svg)](CHANGELOG.md)
 
 ---
 
@@ -16,9 +16,10 @@
 
 - 🎯 **Deep Analysis** - Not just stacking genres, but mechanism fusion
 - 📋 **Structured Output** - Core loop, mechanism fusion table, innovations, risk assessment
+- 📊 **Creative Evaluation** - Auto-score innovation, feasibility, market potential
 - 🌐 **Dual Mode** - CLI + Web UI for different needs
 - 🎨 **Multi-scheme Generation** - Conservative/Balanced/Radical options
-- 📚 **Built-in Examples** - 5 complete example fusion schemes
+- 📚 **Built-in Examples** - 5 examples + 20+ real game cases
 
 ---
 

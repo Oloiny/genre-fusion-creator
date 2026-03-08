@@ -119,6 +119,25 @@ class FusionEngine:
         )
         
         return response
+    
+    def generate_and_evaluate(self, genres: List[str], constraints: str = "") -> tuple:
+        """
+        生成方案并自动评估
+        
+        Args:
+            genres: 游戏类型列表
+            constraints: 约束条件
+            
+        Returns:
+            (方案内容，评估结果) 元组
+        """
+        # 生成方案
+        scheme = self.generate_fusion(genres, constraints)
+        
+        # 评估方案
+        evaluation = self.evaluate(scheme)
+        
+        return scheme, evaluation
 
     def _call_llm(self, system_prompt: str, user_prompt: str) -> str:
         """
@@ -312,6 +331,12 @@ def main():
         dest="evaluate_file",
         help="评估已有的方案文件"
     )
+    
+    parser.add_argument(
+        "--evaluate-new",
+        action="store_true",
+        help="生成新方案并自动评估"
+    )
 
     # 特殊处理：--check-config 不需要 genres 参数
     if "--check-config" in sys.argv or "-c" in sys.argv:
@@ -335,6 +360,60 @@ def main():
         print(f"📊 正在评估：{evaluate_path}")
         result = engine.evaluate(content)
         print(result)
+        return
+    
+    # 生成并评估模式
+    if args.evaluate_new:
+        if len(args.genres) < 2:
+            parser.error("--evaluate-new 需要至少 2 个游戏类型")
+        
+        engine = FusionEngine(api_key=args.api_key, model=args.model)
+        
+        print(f"🎮 正在融合：{' × '.join(args.genres)}")
+        if args.constraint:
+            print(f"📌 约束条件：{args.constraint}")
+        print(f"📦 版本：v{__version__}")
+        print()
+        
+        # 生成方案
+        print("📝 生成方案中...")
+        scheme = engine.generate_fusion(
+            genres=args.genres,
+            constraints=args.constraint,
+            multi_scheme=args.multi,
+        )
+        
+        # 评估方案
+        print("📊 评估方案中...")
+        evaluation = engine.evaluate(scheme)
+        
+        # 输出
+        print("\n" + "="*60)
+        print("融合方案")
+        print("="*60 + "\n")
+        print(scheme)
+        
+        print("\n" + "="*60)
+        print("评估报告")
+        print("="*60 + "\n")
+        print(evaluation)
+        
+        # 保存
+        if args.output:
+            output_path = Path(args.output)
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            
+            # 保存方案
+            scheme_path = output_path.parent / f"{output_path.stem}_scheme{output_path.suffix}"
+            scheme_path.write_text(scheme, encoding="utf-8")
+            
+            # 保存评估
+            eval_path = output_path.parent / f"{output_path.stem}_evaluation{output_path.suffix}"
+            eval_path.write_text(evaluation, encoding="utf-8")
+            
+            print(f"\n✅ 方案已保存到：{scheme_path}")
+            print(f"✅ 评估已保存到：{eval_path}")
+        
         return
 
     if len(args.genres) < 2:

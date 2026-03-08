@@ -7,6 +7,35 @@
 
 ---
 
+## [0.2.0-alpha] - 2026-03-08
+
+### ✨ Added
+
+- **Creative Evaluation**
+  - `--evaluate-new` flag: Auto-evaluate after generation
+  - 5-dimension scoring: Innovation, Feasibility, Fun, Market Potential, Fusion Depth
+  - Overall score + Improvement suggestions
+  - Save scheme and evaluation separately
+
+- **Case Library**
+  - 20+ real game fusion cases
+  - Categories: Roguelike, RPG, Simulation, Strategy, Action, etc.
+  - Each case includes fusion types, success factors, rating
+  - For learning and validation
+
+- **Documentation**
+  - game_examples.md: Game fusion case library
+  - Updated README with evaluation features
+
+### 🔧 Improved
+
+- **CLI Enhancement**
+  - Integrated generate + evaluate flow
+  - Better output format (separators + titles)
+  - Auto-save scheme and evaluation reports
+
+---
+
 ## [0.1.0-alpha] - 2026-03-08
 
 ### ✨ 新增
